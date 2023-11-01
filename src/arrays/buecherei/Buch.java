@@ -13,11 +13,9 @@ public class Buch {
 	private String ISBN;
 
 	public Buch() {
-		super();
 	}
 
 	public Buch(String autor, String titel, String jahr, String iSBN) {
-		super();
 		this.autor = autor;
 		this.titel = titel;
 		this.jahr = jahr;
