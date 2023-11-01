@@ -1,4 +1,4 @@
-Wir erstellen eine Buecher mit Autoren, Jahr, Auflage und Titel.
+Wir erstellen ein Buch mit Autoren, Jahr, Auflage, ISBN und Titel.
 
 Wir erzeugen die Buecherei-Klasse, welche Buecher verwalten soll. Beim Start
  des Programms werden folgende Optionen dem Buechreibesucher angezeigt:

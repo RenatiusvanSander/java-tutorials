@@ -10,7 +10,9 @@ public class Buch {
 	
 	private String jahr;
 	
-	private String ISBN;
+	private String isbn;
+	
+	private int auflage;
 
 	public Buch() {
 	}
@@ -19,7 +21,7 @@ public class Buch {
 		this.autor = autor;
 		this.titel = titel;
 		this.jahr = jahr;
-		ISBN = iSBN;
+		isbn = iSBN;
 	}
 
 	public String getAutor() {
@@ -46,17 +48,25 @@ public class Buch {
 		this.jahr = jahr;
 	}
 
-	public String getISBN() {
-		return ISBN;
+	public String getIsbn() {
+		return isbn;
 	}
 
-	public void setISBN(String iSBN) {
-		ISBN = iSBN;
+	public int getAuflage() {
+		return auflage;
+	}
+
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+
+	public void setAuflage(int auflage) {
+		this.auflage = auflage;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(ISBN, autor, jahr, titel);
+		return Objects.hash(auflage, autor, isbn, jahr, titel);
 	}
 
 	@Override
@@ -68,12 +78,13 @@ public class Buch {
 		if (getClass() != obj.getClass())
 			return false;
 		Buch other = (Buch) obj;
-		return Objects.equals(ISBN, other.ISBN) && Objects.equals(autor, other.autor)
+		return auflage == other.auflage && Objects.equals(autor, other.autor) && Objects.equals(isbn, other.isbn)
 				&& Objects.equals(jahr, other.jahr) && Objects.equals(titel, other.titel);
 	}
 
 	@Override
 	public String toString() {
-		return "Buch [autor=" + autor + ", titel=" + titel + ", jahr=" + jahr + ", ISBN=" + ISBN + "]";
+		return "Buch [autor=" + autor + ", titel=" + titel + ", jahr=" + jahr + ", isbn=" + isbn + ", auflage="
+				+ auflage + "]";
 	}
 }
