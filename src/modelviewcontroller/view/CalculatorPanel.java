@@ -34,7 +34,7 @@ public class CalculatorPanel extends JPanel {
 		add(display, BorderLayout.NORTH);
 
 		// ActionListener insert erzeugen
-		ActionListener command = new CommandAction();
+		//ActionListener command = new CommandAction();
 
 		panel = new JPanel();
 		panel.setLayout(new GridLayout(4, 4));
@@ -42,22 +42,22 @@ public class CalculatorPanel extends JPanel {
 		addButton("7", controller);
 		addButton("8", controller);
 		addButton("9", controller);
-		addButton("/", command);
+		addButton("/", controller);
 
 		addButton("4", controller);
 		addButton("5", controller);
 		addButton("6", controller);
-		addButton("*", command);
+		addButton("*", controller);
 
 		addButton("1", controller);
 		addButton("2", controller);
 		addButton("3", controller);
-		addButton("-", command);
+		addButton("-", controller);
 
 		addButton("0", controller);
 		addButton(".", controller);
-		addButton("+", command);
-		addButton("=", command);
+		addButton("+", controller);
+		addButton("=", controller);
 
 		add(panel, BorderLayout.CENTER);
 	}
