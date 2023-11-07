@@ -2,7 +2,6 @@ package modelviewcontroller.view;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
@@ -31,14 +30,12 @@ public class CalculatorPanel extends JPanel {
 		display = new JButton("0");
 		display.setEnabled(false);
 		// Display oben positionieren
-		add(display, BorderLayout.NORTH);
-
-		// ActionListener insert erzeugen
-		//ActionListener command = new CommandAction();
+//		add(display, BorderLayout.NORTH);
 
 		panel = new JPanel();
-		panel.setLayout(new GridLayout(4, 4));
+		panel.setLayout(new GridLayout(5, 4));
 		// Generierung der numerischen Taschenrechner-Tasten
+		panel.add(display);
 		addButton("7", controller);
 		addButton("8", controller);
 		addButton("9", controller);
@@ -78,55 +75,6 @@ public class CalculatorPanel extends JPanel {
 		CalculatorModel model = new CalculatorModel();
 		controller = new CalculatorController(model, this);		
 	}
-
-	private class CommandAction implements ActionListener {
-		public void actionPerformed(ActionEvent event) {
-			String command = event.getActionCommand();
-
-			// Füge den Präfix "-" an den String an wenn
-			// es sich um den ersten Befehl handelt (negative Zahl)
-			if (start) {
-				if (command.equals("-")) {
-					display.setText(command);
-					start = false;
-				} else {
-					controller.setLastCommand(command);
-				}
-			} else {
-				// Berechnung ausführen
-				controller.claculate(Double.parseDouble(display.getText()));
-				controller.setLastCommand(command);
-				start = true;
-			}
-		}
-	}
-
-//	public void calculate(double x) {
-//		switch (lastCommand) {
-//		case "+": {
-//			result += x;
-//			break;
-//		}
-//		case "-": {
-//			result -= x;
-//			break;
-//		}
-//		case "*": {
-//			result *= x;
-//			break;
-//		}
-//		case "/": {
-//			result /= x;
-//			break;
-//		}
-//		case "=": {
-//			result = x;
-//			break;
-//		}
-//		}
-//
-//		display.setText("" + result);
-//	}
 
 	public JButton getDisplay() {
 		return display;
