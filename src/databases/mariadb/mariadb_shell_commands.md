@@ -47,3 +47,6 @@ Tabelle erstellen mit einer Engine.
 CREATE TABLE `b` (
   `for_key` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
+
+Hiermit lässt sich die Struktur, also die Spalten einer Tabelle anzeigen:
+SHOW COLUMNS FROM city;
