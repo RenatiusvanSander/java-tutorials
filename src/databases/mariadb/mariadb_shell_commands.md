@@ -50,3 +50,6 @@ CREATE TABLE `b` (
 
 Hiermit lässt sich die Struktur, also die Spalten einer Tabelle anzeigen:
 SHOW COLUMNS FROM city;
+
+Simples Anzeigen sämtlicher Tabelleninhalte von Kunde:
+SELECT * FROM Kunde;
